@@ -102,6 +102,7 @@ iframe {
   text-align: center;
 }
 
+
 .spanF:after {
   content: attr(data-count);
   position: absolute;
