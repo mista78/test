@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import api from "../api";
 function GameStreams({ match, location }) {
   const [streamData, setStreamData] = useState([]);
-  const [viewers, setViewers] = useState(0);
-
   useEffect(() => {
     const fetchData = async () => {
       const result = await api.get(
@@ -18,15 +16,10 @@ function GameStreams({ match, location }) {
         stream.thumbnail_url = newURL;
         return stream;
       });
-
-      let totalViewers = finalArray.reduce((acc, val) => {
-        return acc + val.viewer_count;
-      }, 0);
-      setViewers(totalViewers);
       setStreamData(finalArray);
     };
     fetchData();
-  }, []);
+  });
   return (
     <div>
       <div className="row">

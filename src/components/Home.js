@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import ReactPlayer from "react-player";
 import api from "../api";
 function Home({ match }) {
   const [channels, setChannels] = useState([]);
+  const [viewers, setViewers] = useState(0);
   const [views, setViews] = useState({
     "name" : (match.params.id) ? match.params.id : "sardoche"
   });
@@ -42,18 +42,22 @@ function Home({ match }) {
       setChannels(finalArray);
       if (match.params.id === undefined) {
         const uViews = {...views}
+        const uViewers = {...viewers}
+        console.log(finalArray)
         uViews.name = finalArray[0].user_name
+        uViewers.value = finalArray[0].viewer_count
+        uViews.id = finalArray[0].user_id
         setViews(uViews)
+        setViewers(uViewers)
       }
     };
     fetchData();
-  }, []);
+  });
   const handelClick = (event) => {
     const updateViews = {...views}
     updateViews.name = event.target.getAttribute('value')
     setViews(updateViews)
   }
-  
   const url = "https://www.twitch.tv/" + views.name.toLowerCase();
   return (
     <div>
