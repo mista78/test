@@ -52,7 +52,7 @@ function Home({ match }) {
       }
     };
     fetchData();
-  });
+  }, []);
   const handelClick = (event) => {
     const updateViews = {...views}
     updateViews.name = event.target.getAttribute('value')
