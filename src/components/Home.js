@@ -41,10 +41,9 @@ function Home({ match }) {
       });
       setChannels(finalArray);
       if (match.params.id === undefined) {
-        
-      const uViews = {...views}
-      uViews.name = finalArray[0].user_name
-      setViews(uViews)
+        const uViews = {...views}
+        uViews.name = finalArray[0].user_name
+        setViews(uViews)
       }
     };
     fetchData();
