@@ -31,6 +31,7 @@ body {
     top: 50px !important;
     width: 300px !important;
     padding-right: 20px;
+    padding-bottom: 40px;
 }
 
 .right:before {
@@ -84,6 +85,9 @@ body {
   border-left: 1px solid #000;
   border-right: 1px solid #000;
 }
+
+
+
 iframe {
   position: absolute;
   top: 0;
@@ -94,6 +98,24 @@ iframe {
 
 .spanF {
   cursor: pointer;
+  position: relative;
+  text-align: center;
+}
+
+.spanF:after {
+  content: attr(data-count);
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 20px;
+  background: #785a28;
+  z-index: 600;
+  font-weight: 600;
+  color: rgba(0,0,0, .5);
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
 }
 
 /* width */

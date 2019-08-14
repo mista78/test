@@ -65,7 +65,7 @@ function Home({ match }) {
             {channels.map(channel => (
               <div className="col-lg-12 col-md-12 col-sm-12 mt-5">
                 <div className="card">
-                  <span className="spanF"  onClick={handelClick}>
+                  <span className="spanF" data-count={channel.user_name}  onClick={handelClick}>
                     <img
                       value={channel.user_name}
                       className="card-img-top"
