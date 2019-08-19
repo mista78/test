@@ -5,7 +5,7 @@ function Home({ match }) {
   const [channels, setChannels] = useState([]);
   const [viewers, setViewers] = useState(0);
   const [views, setViews] = useState({
-    "name" : (match.params.id) ? match.params.id : "sardoche"
+    "name" : (match.params.id) ? match.params.id : ""
   });
   useEffect(() => {
     const fetchData = async () => {

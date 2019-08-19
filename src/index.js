@@ -17,8 +17,8 @@ function App() {
       <Header />
       <div className="App container-fluid">
         <Route exact path="/" component={Home} />
-        <Route exact path="/game" component={Games} />
-        <Route exact path="/top-streams" component={Stream} />
+        <Route path="/game" component={Games} />
+        <Route path="/top-streams" component={Stream} />
         <Route path="/game/:id" component={GameStreams} />
       </div>
       <Route path="/views/:id" component={Home} />
