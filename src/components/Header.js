@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header({data}) {
   return (
     <nav className="navbar fixed-top">
       <ul>
@@ -13,6 +13,9 @@ function Header() {
         </li>
         <li className="nav-item nav-link">
           <Link to="/top-streams">Top Live Streams</Link>
+        </li>
+        <li className="nav-item nav-link">
+          <Link to="/top-streams">{data}</Link>
         </li>
       </ul>
     </nav>

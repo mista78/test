@@ -24,12 +24,12 @@ function Games() {
     <div>
       <div className="row">
         {games.map(game => (
-          <div className="col-lg-2 col-md-3 col-sm-4 col-6 mt-5">
+          <div key={game.id} className="col-lg-2 col-md-3 col-sm-4 col-6 mt-5">
             <div className="card">
               <Link
                 className="link"
                 to={{
-                  pathname: "/game/" + game.name,
+                  pathname: "/stream/" + game.name,
                   state: {
                     gameID: game.id
                   }

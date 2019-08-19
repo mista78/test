@@ -39,9 +39,10 @@ function Stream() {
     <div>
       <div className="row">
         {channels.map(channel => (
-          <div className="col-lg-3 col-md-4 col-sm-12 mt-5">
-            <div className="card">
+          <div key={channel.user_name}  className="col-lg-3 col-md-4 col-sm-12 mt-5">
+            <div  className="card">
               <Link
+                
                 className="link views"
                 data-count={channel.user_name}
                 to={{

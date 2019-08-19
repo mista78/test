@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import api from "../api";
 function GameStreams({ match, location }) {
   const [streamData, setStreamData] = useState([]);
+  console.log(location)
   useEffect(() => {
     const fetchData = async () => {
       const result = await api.get(
@@ -24,9 +25,10 @@ function GameStreams({ match, location }) {
     <div>
       <div className="row">
         {streamData.map(stream => (
-          <div className="col-lg-3 col-md-4 col-sm-12 mt-5">
+          <div key={stream.user_name} className="col-lg-3 col-md-4 col-sm-12 mt-5">
             <div className="card">
               <Link
+              
                 className="link views"
                 data-count={stream.user_name}
                 to={{
