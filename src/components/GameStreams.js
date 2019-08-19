@@ -19,7 +19,7 @@ function GameStreams({ match, location }) {
       setStreamData(finalArray);
     };
     fetchData();
-  });
+  }, []);
   return (
     <div>
       <div className="row">
