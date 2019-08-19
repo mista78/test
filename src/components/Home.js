@@ -24,7 +24,6 @@ function Home({ match }) {
       let finalURL = baseURL + queryParams;
       let gameNames = await api.get(finalURL);
       let gameNameArray = gameNames.data.data;
-
       let finalArray = dataArray.map(stream => {
         stream.gameName = "";
         gameNameArray.map(name => {
@@ -32,7 +31,6 @@ function Home({ match }) {
             return (stream.gameName = name.name);
           }
         });
-
         let newURL = stream.thumbnail_url
           .replace("{width}", "320")
           .replace("{height}", "180");

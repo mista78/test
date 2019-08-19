@@ -10,17 +10,14 @@ function Stream() {
       let gameIDs = dataArray.map(stream => {
         return stream.game_id;
       });
-
       let baseURL = "https://api.twitch.tv/helix/games?";
       let queryParams = "";
       gameIDs.map(id => {
         return (queryParams = queryParams + `id=${id}&`);
       });
-
       let finalURL = baseURL + queryParams;
       let gameNames = await api.get(finalURL);
       let gameNameArray = gameNames.data.data;
-
       let finalArray = dataArray.map(stream => {
         stream.gameName = "";
         gameNameArray.map(name => {
@@ -28,7 +25,6 @@ function Stream() {
             return (stream.gameName = name.name);
           }
         });
-
         let newURL = stream.thumbnail_url
           .replace("{width}", "320")
           .replace("{height}", "180");
