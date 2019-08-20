@@ -14,9 +14,6 @@ function Header({data}) {
         <li className="nav-item nav-link">
           <Link to="/top-streams">Top Live Streams</Link>
         </li>
-        <li className="nav-item nav-link">
-          <Link to="/top-streams">{data}</Link>
-        </li>
       </ul>
     </nav>
   );
